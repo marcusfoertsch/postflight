@@ -1,0 +1,97 @@
+const chai = require('chai');
+
+const expect = chai.expect;
+
+describe('Postflight integration', () => {
+    const Postflight = require('../../src/postflight');
+    const ModelSpec = require('../../src/model-spec');
+
+    const Widget = class {
+        constructor(id, name, weight, packageSize) {
+            this.id = id || null;
+            this.name = name || null;
+            this.weight = weight || null;
+            this.packageSize = packageSize || null;
+        }
+    };
+
+    const specMap = new Map();
+    const widgetPropertyMap = new Map();
+    widgetPropertyMap.set('id', 'id');
+    widgetPropertyMap.set('name', 'name');
+    widgetPropertyMap.set('weight', 'weight');
+    widgetPropertyMap.set('packageSize', 'package_size');
+
+    const widgetSpec = new ModelSpec(widgetPropertyMap, Widget);
+
+    specMap.set('widget', widgetSpec);
+
+    it('should return a Widget', () => {
+        const postflight = new Postflight(specMap);
+
+        const rows =  [
+            {
+                id: 1,
+                name: 'Factory widget',
+                weight: 150,
+                package_size: 5
+            }
+        ];
+
+        const models = postflight.getSpec('widget').getModels(rows);
+        const model = models[0];
+
+        expect(model.id).to.equal(1);
+        expect(model.name).to.equal('Factory widget');
+        expect(model.weight).to.equal(150);
+        expect(model.packageSize).to.equal(5);
+        expect(model instanceof Widget).to.be.true;
+    });
+
+    it('should return an array of Widgets', () => {
+        const postflight = new Postflight(specMap);
+
+        const rows = [
+            {
+                id: 1,
+                name: 'Factory widget',
+                weight: 150,
+                package_size: 5
+            },
+            {
+                id: 2,
+                name: 'Computer widget',
+                weight: 10,
+                package_size: 20
+            },
+            {
+                id: 3,
+                name: 'Car widget',
+                weight: 4000,
+                package_size: 1
+            }
+        ];
+
+        const models = postflight.getSpec('widget').getModels(rows);
+
+        expect(models[0].id).to.equal(1);
+        expect(models[0].name).to.equal('Factory widget');
+        expect(models[0].weight).to.equal(150);
+        expect(models[0].packageSize).to.equal(5);
+        expect(models[0] instanceof Widget).to.be.true;
+
+        expect(models[1].id).to.equal(2);
+        expect(models[1].name).to.equal('Computer widget');
+        expect(models[1].weight).to.equal(10);
+        expect(models[1].packageSize).to.equal(20);
+        expect(models[1] instanceof Widget).to.be.true;
+
+        expect(models[2].id).to.equal(3);
+        expect(models[2].name).to.equal('Car widget');
+        expect(models[2].weight).to.equal(4000);
+        expect(models[2].packageSize).to.equal(1);
+        expect(models[2] instanceof Widget).to.be.true;
+    });
+
+    // TODO: Test invalid inputs
+});
