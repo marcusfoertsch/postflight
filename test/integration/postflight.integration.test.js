@@ -16,11 +16,13 @@ describe('Postflight integration', () => {
     };
 
     const specMap = new Map();
-    const widgetPropertyMap = new Map();
-    widgetPropertyMap.set('id', 'id');
-    widgetPropertyMap.set('name', 'name');
-    widgetPropertyMap.set('weight', 'weight');
-    widgetPropertyMap.set('packageSize', 'package_size');
+
+    const widgetPropertyMap = new Map([
+        ['id', 'id'],
+        ['name', 'name'],
+        ['weight', 'weight'],
+        ['packageSize', 'package_size']
+    ])
 
     const widgetSpec = new ModelSpec(widgetPropertyMap, Widget);
 
