@@ -45,3 +45,18 @@ const rows =  [
 const models = postflight.getSpec('Widget').getModels(rows);
 
 ```
+
+## Add a model mapping without a business class
+
+```
+
+const widgetSpecConfig = {
+    name: 'Widget',
+    propertyMap: widgetPropertyMap
+};
+
+```
+
+# API
+
+The postflight module returns the class Postflight. An instance of Postflight keeps track of 
