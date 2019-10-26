@@ -59,4 +59,12 @@ const widgetSpecConfig = {
 
 # API
 
-The postflight module returns the class Postflight. An instance of Postflight keeps track of 
+The postflight module returns the class Postflight. An instance of Postflight holds a Map object called specMap. Keys are strings, and values are objects of the ModelSpec class. 
+
+## Postflight
+
+
+
+## ModelSpec
+
+The ModelSpec class maps model object property names to database column names using a Map object. This class can also store a class for instantiating business object classes.
