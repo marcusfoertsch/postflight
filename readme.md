@@ -5,7 +5,9 @@ Postflight is a node package for mapping database columns to business model prop
 # Install
 
 ```bash
-$ npm install postflight
+
+npm install postflight
+
 ```
 
 # Usage
@@ -22,7 +24,7 @@ const widgetPropertyMap = new Map([
 const widgetSpecConfig = {
     name: 'Widget',
     propertyMap: widgetPropertyMap,
-    modelClass: Widget
+    modelClass: Widget // optional
 };
 
 const Postflight = require('postflight');
@@ -46,22 +48,21 @@ const models = postflight.getSpec('Widget').getModels(rows);
 
 ```
 
-## Add a model mapping without a business class
+# Tests
 
-```javascript
+Unit and integration tests use the Mocha framework with Chai assertion library.
 
-const widgetSpecConfig = {
-    name: 'Widget',
-    propertyMap: widgetPropertyMap
-};
+```bash
+
+npm test
 
 ```
 
 # API
 
-The postflight module returns the class Postflight. An instance of Postflight holds a Map object called specMap. Keys are strings, and values are objects of the ModelSpec class. 
-
 ## Postflight
+
+The postflight module returns the class Postflight. An instance of Postflight holds a Map object called specMap. Keys are strings, and values are objects of the ModelSpec class.
 
 
 
