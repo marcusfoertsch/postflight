@@ -65,7 +65,7 @@ The postflight module returns the class Postflight. An instance of Postflight ho
 
 Create a Postflight instance using an optional Map object for mapping model properties to database columns. Keys are model property names, and values are database column names.
 
-### `addSpec(specConfig {Object})
+### `addSpec(specConfig {Object})`
 
 Add a model mapping to the Postflight object. The argument is an object with properties
 
