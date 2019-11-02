@@ -89,6 +89,6 @@ The ModelSpec class maps model object property names to database column names us
 
 Create a ModelSpec object using a Map object where keys represent model property names, and values represent the matching database column name. It also takes an optional `modelClass` argument, which is the business object class for instantiation.
 
-### `getModels(rows {Array<Object>}) {[Object]}`
+### getModels(rows {Array<Object>}) {[Object]}
 
 Gets model objects from an array of database objects. The database objects have property names matching the database column names, where the property's value is equal to the value of the database column.
