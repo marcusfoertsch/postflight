@@ -61,11 +61,11 @@ $ npm test
 
 The postflight module returns the class Postflight. An instance of Postflight holds a Map object called specMap. Keys are strings, and values are objects of the ModelSpec class.
 
-#### `constructor(specMap {Map<string, string>})`
+#### constructor(specMap {Map<string, string>})
 
 Create a Postflight instance using an optional Map object for mapping model properties to database columns. Keys are model property names, and values are database column names.
 
-#### `addSpec(specConfig {Object})`
+#### addSpec(specConfig {Object})
 
 Add a model mapping to the Postflight object. The argument is an object with properties
 
@@ -77,7 +77,7 @@ Add a model mapping to the Postflight object. The argument is an object with pro
 }
 ```
 
-#### `getSpec(modelName {string}) {ModelSpec}`
+#### getSpec(modelName {string}) {ModelSpec}
 
 Get the ModelSpec with a key matching `modelName`.
 
@@ -85,10 +85,10 @@ Get the ModelSpec with a key matching `modelName`.
 
 The ModelSpec class maps model object property names to database column names using a Map object, and creates objects based on this mapping.
 
-#### `constructor(propertyMap {Map<string, string>}, modelClass {class})`
+#### constructor(propertyMap {Map<string, string>}, modelClass {class})
 
 Create a ModelSpec object using a Map object where keys represent model property names, and values represent the matching database column name. It also takes an optional `modelClass` argument, which is the business object class for instantiation.
 
-#### `getModels(rows {Array<Object>}) {[Object]}`
+#### getModels(rows {Array<Object>}) {[Object]}
 
 Gets model objects from an array of database objects. The database objects have property names matching the database column names, where the property's value is equal to the value of the database column.
