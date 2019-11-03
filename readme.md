@@ -67,15 +67,19 @@ Create a Postflight instance using an optional Map object for mapping model prop
 
 ### addSpec(specConfig {Object})
 
-Add a model mapping to the Postflight object. The argument is an object with properties
+Add a model mapping to the Postflight object. The argument is a config object:
 
 ```javascript
 {
-    name {string},
-    propertyMap {Map<string, string>},
-    modelClass {class} // optional
+    name,
+    propertyMap,
+    modelClass // optional
 }
 ```
+
+`name` is a string which will be the key the mapping is retrieved by.
+`propertyMap` is a Map object, with keys for model property names and values for database column names.
+`modelClass` is an optional property to instantiate model objects as an instance of a class.
 
 ### getSpec(modelName {string}) {ModelSpec}
 
@@ -89,6 +93,6 @@ The ModelSpec class maps model object property names to database column names us
 
 Create a ModelSpec object using a Map object where keys represent model property names, and values represent the matching database column name. It also takes an optional `modelClass` argument, which is the business object class for instantiation.
 
-### getsModels(rows {Array\<Object\>}) {[Object]}
+### getModels(rows {Array\<Object\>}) {Array\<Object\>}
 
 Gets Model objects from an array of database objects. The database objects have property names matching the database column names, where the property's value is equal to the value of the database column.
