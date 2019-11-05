@@ -1,4 +1,4 @@
-const underscoreStrategy = (modelProperty, dbColumnName) => {
+const underscoreConvention = (modelProperty, dbColumnName) => {
     const delimiter = '_';
 
     let propertyNameArray = dbColumnName.split('');
@@ -19,4 +19,4 @@ const underscoreStrategy = (modelProperty, dbColumnName) => {
     }
 };
 
-module.exports = underscoreStrategy;
+module.exports = underscoreConvention;
