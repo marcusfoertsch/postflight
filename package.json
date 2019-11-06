@@ -1,7 +1,11 @@
 {
   "name": "postflight",
   "version": "1.0.0",
-  "description": "",
+  "description": "Database to Javascript object mapper",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/marcusfoertsch/postflight.git"
+  },
   "main": "postflight.js",
   "scripts": {
     "test": "mocha \"test/**/*.test.js\"",
@@ -10,9 +14,9 @@
     "coverage": "nyc --reporter=text --reporter=lcov mocha \"test/**/*.test.js\"",
     "lint": "./node_modules/.bin/eslint ./"
   },
-  "keywords": [],
+  "keywords": ["node", "postgres", "sql"],
   "author": "Marcus Foertsch",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "chai": "^4.2.0",
