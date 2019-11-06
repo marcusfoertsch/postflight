@@ -8,10 +8,10 @@ describe('Postflight integration', () => {
 
     const Widget = class {
         constructor(id, name, weight, packageSize) {
-            this.id = id || null;
-            this.name = name || null;
-            this.weight = weight || null;
-            this.packageSize = packageSize || null;
+            this.id = id;
+            this.name = name;
+            this.weight = weight;
+            this.packageSize = packageSize;
         }
     };
 

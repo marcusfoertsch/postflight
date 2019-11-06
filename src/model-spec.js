@@ -3,9 +3,9 @@ const modelFactory = require('./model-factory');
 const ModelSpec = class {
 
     // Should throw error when no property map specified
-    constructor(propertyMap, modelClass) {
+    constructor(propertyMap, modelClass = {}) {
         this._propertyMap = propertyMap;
-        this._modelClass = modelClass || {};
+        this._modelClass = modelClass;
     }
 
     getModels(rows) {
