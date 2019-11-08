@@ -4,9 +4,11 @@ const underscoreConvention = (modelProperty, dbColumnName) => {
 
     const convertedPropertyNameArray = propertyNameArray.reduce((accumulator, currentValue, currentIndex, sourceArray) => {        
         if (currentValue === delimiter && currentIndex !== sourceArray.length - 1) {
+            // Do not assume repeated underscores map to camel cased property
             if (sourceArray[currentIndex - 1] === delimiter) {
-                // Break if two underscores in a row
-                sourceArray.splice(1);
+                accumulator.push(delimiter);
+                
+                return accumulator;
             }
 
             return accumulator;
