@@ -1,22 +1,31 @@
 const underscoreConvention = (modelProperty, dbColumnName) => {
     const delimiter = '_';
+    const propertyNameArray = [...dbColumnName];
 
-    let propertyNameArray = dbColumnName.split('');
+    const convertedPropertyNameArray = propertyNameArray.reduce((accumulator, currentValue, currentIndex, sourceArray) => {        
+        if (currentValue === delimiter && currentIndex !== sourceArray.length - 1) {
+            if (sourceArray[currentIndex - 1] === delimiter) {
+                // Break if two underscores in a row
+                sourceArray.splice(1);
+            }
 
-    for (let i = 0; i < propertyNameArray.length; i++) {
-        const currentChar = propertyNameArray[i];
+            return accumulator;
+        } else if (sourceArray[currentIndex - 1] === delimiter) {
+            accumulator.push(currentValue.toUpperCase());
 
-        if (currentChar === delimiter && i != propertyNameArray.length - 1) {
-            propertyNameArray[i + 1] = propertyNameArray[i + 1].toUpperCase();
-            propertyNameArray.splice(i, 1);
+            return accumulator;
         }
+
+        accumulator.push(currentValue);
+
+        return accumulator;
+    }, []);
+
+    if (modelProperty === convertedPropertyNameArray.join('')) {
+        return true;
     }
 
-    if (modelProperty === propertyNameArray.join("")) {
-        return true;
-    } else {
-        return false;
-    }
+    return false
 };
 
 module.exports = underscoreConvention;
