@@ -1,5 +1,5 @@
-const chai = require('chai');
-const modelFactory = require('../../src/model-factory');
+import chai from 'chai';
+import modelFactory from '../../src/model-factory';
 
 const expect = chai.expect;
 

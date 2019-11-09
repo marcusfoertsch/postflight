@@ -6,4 +6,4 @@
     }
 };
 
-module.exports = exactStrategy;
+export default exactStrategy;

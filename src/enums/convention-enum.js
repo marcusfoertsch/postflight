@@ -5,4 +5,4 @@ const conventionEnum = {
 
 Object.freeze(conventionEnum);
 
-module.exports =  conventionEnum;
+export default conventionEnum;

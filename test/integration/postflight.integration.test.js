@@ -1,10 +1,10 @@
-const chai = require('chai');
+import chai from 'chai';
+import Postflight from '../../src/postflight';
+import ModelSpec from '../../src/model-spec';
 
 const expect = chai.expect;
 
 describe('Postflight integration', () => {
-    const Postflight = require('../../src/postflight');
-    const ModelSpec = require('../../src/model-spec');
 
     const Widget = class {
         constructor(id, name, weight, packageSize) {

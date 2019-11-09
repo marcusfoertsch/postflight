@@ -1,8 +1,8 @@
-const chai = require('chai');
+import chai from 'chai';
 
 const expect = chai.expect;
 
-const exactConvention = require('../../src/conventions/exact-convention');
+import exactConvention from '../../src/conventions/exact-convention';
 
 describe('Exact convention', () => {
     it('should return true if the names match', () => {

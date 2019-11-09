@@ -1,8 +1,8 @@
-const chai = require('chai');
+import chai from 'chai';
+import ConventionEnum from '../../src/enums/convention-enum';
 
 const expect = chai.expect;
 
-const ConventionEnum = require('../../src/enums/convention-enum');
 
 describe('Convention Enum', () => {
     it('underscore property should equal \'underscore\' ', () => {

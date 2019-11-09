@@ -1,5 +1,5 @@
-const chai = require('chai');
-const proxyquire = require('proxyquire');
+import chai from 'chai';
+import proxyquire from 'proxyquire';
 
 const expect = chai.expect;
 
@@ -12,8 +12,10 @@ describe('Validator', () => {
         };
 
         const validator = proxyquire('../../src/validator/validator', {
-            '../utils/utils': utilStub
-        });
+            '../utils/utils': { 
+                default: utilStub
+            }
+        }).default;
 
         const expected = function() { 
             validator.modelDefinition(null); 
@@ -30,8 +32,10 @@ describe('Validator', () => {
         };
 
         const validator = proxyquire('../../src/validator/validator', {
-            '../utils/utils': utilStub
-        });
+            '../utils/utils': { 
+                default: utilStub 
+            }
+        }).default;
 
         const expected = function() { 
             validator.modelDefinition({}); 
@@ -48,8 +52,10 @@ describe('Validator', () => {
         };
 
         const validator = proxyquire('../../src/validator/validator', {
-            '../utils/utils': utilStub
-        });
+            '../utils/utils': { 
+                default: utilStub 
+            }
+        }).default;
 
         const expected = function () { 
             validator.rows(null); 
@@ -66,8 +72,10 @@ describe('Validator', () => {
         };
 
         const validator = proxyquire('../../src/validator/validator', {
-            '../utils/utils': utilStub
-        });
+            '../utils/utils': { 
+                default: utilStub 
+            }
+        }).default;
 
         const expected = function () { 
             validator.rows([]); 
@@ -84,8 +92,10 @@ describe('Validator', () => {
         };
 
         const validator = proxyquire('../../src/validator/validator', {
-            '../utils/utils': utilStub
-        });
+            '../utils/utils': { 
+                default: utilStub 
+            }
+        }).default;
 
         const rows = [
             {
@@ -108,8 +118,10 @@ describe('Validator', () => {
         };
 
         const validator = proxyquire('../../src/validator/validator', {
-            '../utils/utils': utilStub
-        });
+            '../utils/utils': { 
+                default: utilStub 
+            }
+        }).default;
 
         const modelDefinition = {
             aProperty: 'Some stuff'

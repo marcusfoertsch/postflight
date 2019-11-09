@@ -1,5 +1,5 @@
-const chai = require('chai');
-const utils = require('../../src/utils/utils');
+import chai from 'chai';
+import utils from '../../src/utils/utils';
 const expect = chai.expect;
 
 describe('Utils tests', () => {

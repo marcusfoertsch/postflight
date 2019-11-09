@@ -16,4 +16,4 @@ const modelFactory = {
     }
 };
 
-module.exports = modelFactory;
+export default modelFactory;

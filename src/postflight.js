@@ -1,4 +1,4 @@
-const ModelSpec = require('./model-spec');
+import ModelSpec from './model-spec';
 
 const Postflight = class {
     constructor(specMap = new Map()) {
@@ -28,4 +28,4 @@ const Postflight = class {
     }
 };
 
-module.exports = Postflight;
+export default Postflight;

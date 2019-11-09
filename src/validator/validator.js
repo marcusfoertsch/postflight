@@ -1,4 +1,4 @@
-const utils = require('../utils/utils');
+import utils from '../utils/utils';
 
 const validator = {
     rows: (rows) => {
@@ -17,4 +17,4 @@ const validator = {
     }
 };
 
-module.exports = validator;
+export default validator;

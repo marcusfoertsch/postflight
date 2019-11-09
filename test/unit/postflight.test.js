@@ -1,5 +1,5 @@
-const chai = require('chai');
-const proxyquire = require('proxyquire');
+import chai from 'chai';
+import proxyquire from 'proxyquire';
 const expect = chai.expect;
 
 describe('Postflight', () => {
@@ -32,8 +32,10 @@ describe('Postflight', () => {
         };
 
         Postflight = proxyquire('../../src/postflight', {
-            './model-spec': ModelSpec
-        });
+            './model-spec': {
+                default: ModelSpec 
+            }
+        }).default;
 
         specMap = new Map();
         personPropertyMap = new Map();

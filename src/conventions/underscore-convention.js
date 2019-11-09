@@ -30,4 +30,4 @@ const underscoreConvention = (modelProperty, dbColumnName) => {
     return false
 };
 
-module.exports = underscoreConvention;
+export default underscoreConvention;

@@ -1,6 +1,5 @@
-const proxyquire = require('proxyquire');
-const sinon = require('sinon');
-const chai = require('chai');
+import proxyquire from 'proxyquire';
+import chai from 'chai';
 const expect = chai.expect;
 
 
@@ -30,8 +29,10 @@ describe('Model Spec tests', () => {
         };
 
         const ModelSpec = proxyquire('../../src/model-spec', {
-            './model-factory': modelFactoryStub
-        });
+            './model-factory': { 
+                default: modelFactoryStub 
+            }
+        }).default;
 
         const personSpec = new ModelSpec(personPropertyMap, Person);
 
@@ -59,8 +60,10 @@ describe('Model Spec tests', () => {
         };
 
         const ModelSpec = proxyquire('../../src/model-spec', {
-            './model-factory': modelFactoryStub
-        });
+            './model-factory': { 
+                default: modelFactoryStub 
+            }
+        }).default;
 
         const expectedPerson = new Person(0, 'John', 'Rambo', new Date('1949-04-15'));
 
@@ -80,8 +83,10 @@ describe('Model Spec tests', () => {
         };
 
         const ModelSpec = proxyquire('../../src/model-spec', {
-            './model-factory': modelFactoryStub
-        });
+            './model-factory': { 
+                default: modelFactoryStub 
+            }
+        }).default;
 
         const personSpec = new ModelSpec(personPropertyMap);
         const modelClass = personSpec._modelClass;

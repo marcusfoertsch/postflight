@@ -1,5 +1,5 @@
-const chai = require('chai');
-const mapper = require('../../src/mapper');
+import chai from 'chai';
+import mapper from '../../src/mapper';
 
 const expect = chai.expect;
 

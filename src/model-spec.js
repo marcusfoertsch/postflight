@@ -1,4 +1,4 @@
-const modelFactory = require('./model-factory');
+import modelFactory from './model-factory';
 
 const ModelSpec = class {
 
@@ -17,4 +17,4 @@ const ModelSpec = class {
     }
 };
 
-module.exports = ModelSpec;
+export default ModelSpec;

@@ -22,4 +22,4 @@ const mapper = {
     }
 };
 
-module.exports = mapper;
+export default mapper;

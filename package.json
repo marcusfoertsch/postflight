@@ -8,17 +8,24 @@
   },
   "main": "postflight.js",
   "scripts": {
-    "test": "mocha \"test/**/*.test.js\"",
-    "test-unit": "mocha \"test/unit/**/*.test.js\"",
-    "test-integration": "mocha \"test/integration/**/*.test.js\"",
-    "coverage": "nyc --reporter=text --reporter=lcov mocha \"test/**/*.test.js\"",
+    "test": "mocha --require @babel/register \"test/**/*.test.js\"",
+    "test-unit": "mocha --require @babel/register \"test/unit/**/*.test.js\"",
+    "test-integration": "mocha --require @babel/register \"test/integration/**/*.test.js\"",
+    "coverage": "nyc --reporter=text --reporter=lcov mocha --require @babel/register \"test/**/*.test.js\"",
     "lint": "./node_modules/.bin/eslint ./"
   },
-  "keywords": ["node", "postgres", "sql"],
+  "keywords": [
+    "node",
+    "postgres",
+    "sql"
+  ],
   "author": "Marcus Foertsch",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
     "chai": "^4.2.0",
     "eslint": "^6.4.0",
     "jsdoc": "^3.6.3",

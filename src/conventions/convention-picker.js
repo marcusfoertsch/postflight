@@ -1,5 +1,5 @@
-const underscoreConvention = require('./underscore-convention');
-const PostflightConvention = require('../enums/convention-enum');
+import underscoreConvention from './underscore-convention';
+import PostflightConvention from '../enums/convention-enum';
 
 const conventionPicker =  (postflightConvention) => {
     switch (postflightConvention) {
@@ -10,4 +10,4 @@ const conventionPicker =  (postflightConvention) => {
     }
 };
 
-module.exports = conventionPicker;
+export default conventionPicker;

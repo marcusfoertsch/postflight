@@ -1,7 +1,8 @@
-const chai = require('chai');
+import chai from 'chai';
+import conventions from '../../src/conventions/underscore-convention';
+
 const expect = chai.expect;
 
-const conventions = require('../../src/conventions/underscore-convention');
 
 describe('Conventions', function () {
     describe('Underscore', function () {
