@@ -38,8 +38,8 @@ describe('Model Spec tests', () => {
 
         
 
-        expect(personSpec._propertyMap).to.be.equal(personPropertyMap);
-        expect(personSpec._modelClass).to.be.equal(Person);
+        expect(personSpec.propertyMap).to.be.equal(personPropertyMap);
+        expect(personSpec.modelClass).to.be.equal(Person);
     });
 
     // TODO: Spy on modelFactory to test calling arguments?
@@ -89,7 +89,7 @@ describe('Model Spec tests', () => {
         }).default;
 
         const personSpec = new ModelSpec(personPropertyMap);
-        const modelClass = personSpec._modelClass;
+        const modelClass = personSpec.modelClass;
         const isEmptyObject = Object.entries(modelClass).length === 0 && modelClass.constructor === Object;
 
         expect(isEmptyObject).to.be.true;

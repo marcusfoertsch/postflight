@@ -1,25 +1,25 @@
 const mapper = {
-    getMapping: (modelObject, row, strategy) => {
-        const propertyMap = new Map();
-        
-        Object.keys(modelObject).map(propertyName => {
-            let isInStrategy = false;
+  getMapping: (modelObject, row, strategy) => {
+    const propertyMap = new Map();
 
-            Object.keys(row).map(columnName => {
-                if (strategy(propertyName, columnName)) {
-                    propertyMap.set(propertyName, columnName);
+    Object.keys(modelObject).forEach((propertyName) => {
+      let isInStrategy = false;
 
-                    isInStrategy = true;
-                }
-            });
+      Object.keys(row).forEach((columnName) => {
+        if (strategy(propertyName, columnName)) {
+          propertyMap.set(propertyName, columnName);
 
-            if (!isInStrategy) {
-                throw new Error('Column name does not fit strategy');
-            }
-        });
-        
-        return propertyMap;
-    }
+          isInStrategy = true;
+        }
+      });
+
+      if (!isInStrategy) {
+        throw new Error('Column name does not fit strategy');
+      }
+    });
+
+    return propertyMap;
+  },
 };
 
 export default mapper;

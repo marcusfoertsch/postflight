@@ -54,8 +54,8 @@ describe('Postflight', () => {
         const postflight = new Postflight();
 
         expect(postflight instanceof Postflight).to.be.true;
-        expect(postflight._specMap instanceof Map).to.be.true;
-        expect(postflight._specMap.size).to.be.equal(0);
+        expect(postflight.specMap instanceof Map).to.be.true;
+        expect(postflight.specMap.size).to.be.equal(0);
     });
 
 
@@ -63,8 +63,8 @@ describe('Postflight', () => {
         const postflight = new Postflight(specMap);
 
         expect(postflight instanceof Postflight).to.be.true;
-        expect(postflight._specMap instanceof Map).to.be.true;
-        expect(postflight._specMap === specMap).to.be.true;
+        expect(postflight.specMap instanceof Map).to.be.true;
+        expect(postflight.specMap === specMap).to.be.true;
     });
 
     it('should add a ModelSpec', () => {
@@ -78,7 +78,7 @@ describe('Postflight', () => {
 
         postflight.addSpec(specConfig);
 
-        const specMap = postflight._specMap;
+        const specMap = postflight.specMap;
 
         expect(specMap.get('Person') instanceof ModelSpec).to.be.true;
         expect(specMap.get('Person')._propertyMap).to.equal(personPropertyMap);

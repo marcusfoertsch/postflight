@@ -1,7 +1,7 @@
 const utils = {
-    isObjectEmptyOrNull(obj) {
-        return obj === null || Object.entries(obj).length === 0 && obj.constructor === Object;
-    }
+  isObjectEmptyOrNull(obj) {
+    return obj === null || (Object.entries(obj).length === 0 && obj.constructor === Object);
+  },
 };
 
 export default utils;

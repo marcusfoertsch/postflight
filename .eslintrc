@@ -1,12 +1,4 @@
 
 {
-    "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module"
-    },
-    "rules": {
-        "semi": "error",
-        "curly": "error",
-        "brace-style": "error"
-    }
+    "extends": "airbnb-base"
 }

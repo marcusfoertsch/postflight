@@ -1,6 +1,6 @@
 const conventionEnum = {
-    exact: 'exact',
-    underscore: 'underscore'
+  exact: 'exact',
+  underscore: 'underscore',
 };
 
 Object.freeze(conventionEnum);
