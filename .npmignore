@@ -1,9 +1,0 @@
-# Ignore tests
-test/**/*
-
-#Ignore CI/CD config
-.circleci/
-
-## Linting
-.eslintignore
-.eslintrc

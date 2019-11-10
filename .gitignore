@@ -4,3 +4,9 @@ node_modules/
 ## Coverage
 coverage/
 .nyc_output
+
+## Bable output folder
+dist/
+
+## macOS files
+.ds_store
