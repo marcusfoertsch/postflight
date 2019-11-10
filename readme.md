@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/marcusfoertsch/postflight/tree/master.svg?style=svg)](https://circleci.com/gh/marcusfoertsch/postflight/tree/master) [![Generic badge](https://img.shields.io/badge/style-Airbnb-green.svg)](https://shields.io/) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+
 # Postflight
 
 Postflight is a node package for mapping database columns to business model properties. It can also instantiate business objects. 
