@@ -1,5 +1,8 @@
 {
     "presets": [
-        "airbnb"
+        "@babel/preset-env",
+    ],
+    "plugins": [
+        "add-module-exports"
     ]
 }

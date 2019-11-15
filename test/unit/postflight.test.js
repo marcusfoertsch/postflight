@@ -32,10 +32,8 @@ describe('Postflight', () => {
         };
 
         Postflight = proxyquire('../../src/postflight', {
-            './model-spec': {
-                default: ModelSpec 
-            }
-        }).default;
+            './model-spec': ModelSpec
+        });
 
         specMap = new Map();
         personPropertyMap = new Map();

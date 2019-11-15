@@ -12,10 +12,8 @@ describe('Validator', () => {
         };
 
         const validator = proxyquire('../../src/validator/validator', {
-            '../utils/utils': { 
-                default: utilStub
-            }
-        }).default;
+            '../utils/utils': utilStub
+        });
 
         const expected = function() { 
             validator.modelDefinition(null); 
@@ -32,10 +30,8 @@ describe('Validator', () => {
         };
 
         const validator = proxyquire('../../src/validator/validator', {
-            '../utils/utils': { 
-                default: utilStub 
-            }
-        }).default;
+            '../utils/utils': utilStub
+        });
 
         const expected = function() { 
             validator.modelDefinition({}); 
@@ -52,10 +48,8 @@ describe('Validator', () => {
         };
 
         const validator = proxyquire('../../src/validator/validator', {
-            '../utils/utils': { 
-                default: utilStub 
-            }
-        }).default;
+            '../utils/utils': utilStub
+        });
 
         const expected = function () { 
             validator.rows(null); 
@@ -72,10 +66,8 @@ describe('Validator', () => {
         };
 
         const validator = proxyquire('../../src/validator/validator', {
-            '../utils/utils': { 
-                default: utilStub 
-            }
-        }).default;
+            '../utils/utils': utilStub
+        });
 
         const expected = function () { 
             validator.rows([]); 
@@ -92,10 +84,8 @@ describe('Validator', () => {
         };
 
         const validator = proxyquire('../../src/validator/validator', {
-            '../utils/utils': { 
-                default: utilStub 
-            }
-        }).default;
+            '../utils/utils': utilStub
+        });
 
         const rows = [
             {
@@ -118,10 +108,8 @@ describe('Validator', () => {
         };
 
         const validator = proxyquire('../../src/validator/validator', {
-            '../utils/utils': { 
-                default: utilStub 
-            }
-        }).default;
+            '../utils/utils': utilStub 
+        });
 
         const modelDefinition = {
             aProperty: 'Some stuff'

@@ -29,10 +29,8 @@ describe('Model Spec tests', () => {
         };
 
         const ModelSpec = proxyquire('../../src/model-spec', {
-            './model-factory': { 
-                default: modelFactoryStub 
-            }
-        }).default;
+            './model-factory': modelFactoryStub
+        });
 
         const personSpec = new ModelSpec(personPropertyMap, Person);
 
@@ -60,10 +58,8 @@ describe('Model Spec tests', () => {
         };
 
         const ModelSpec = proxyquire('../../src/model-spec', {
-            './model-factory': { 
-                default: modelFactoryStub 
-            }
-        }).default;
+            './model-factory': modelFactoryStub
+        });
 
         const expectedPerson = new Person(0, 'John', 'Rambo', new Date('1949-04-15'));
 
@@ -83,10 +79,8 @@ describe('Model Spec tests', () => {
         };
 
         const ModelSpec = proxyquire('../../src/model-spec', {
-            './model-factory': { 
-                default: modelFactoryStub 
-            }
-        }).default;
+            './model-factory': modelFactoryStub
+        });
 
         const personSpec = new ModelSpec(personPropertyMap);
         const modelClass = personSpec.modelClass;
