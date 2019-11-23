@@ -13,7 +13,7 @@
     "readme.md"
   ],
   "scripts": {
-    "test": "mocha --require @babel/register \"test/**/*.test.js\"",
+    "test": "npm run test-unit && npm run test-integration && npm run test-e2e",
     "test-unit": "mocha --require @babel/register \"test/unit/**/*.test.js\"",
     "test-integration": "mocha --require @babel/register \"test/integration/**/*.test.js\"",
     "test-e2e": "./test/e2e/prepare-e2e.sh && mocha \"test/e2e/**/*.test.js\" && ./test/e2e/cleanup-e2e.sh",
