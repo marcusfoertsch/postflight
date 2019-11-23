@@ -26,6 +26,9 @@
       "pre-commit": "./node_modules/.bin/eslint ./"
     }
   },
+  "nyc": {
+    "include": "src"
+  },
   "keywords": [
     "node",
     "postgres",
