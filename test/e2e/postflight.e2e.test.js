@@ -1,6 +1,6 @@
 const chai = require('chai');
-const Postflight = require('../../dist/postflight');
-const ModelSpec = require('../../dist/model-spec');
+const Postflight = require('./postflight/');
+const ModelSpec = require('./postflight/dist/model-spec');
 
 const expect = chai.expect;
 

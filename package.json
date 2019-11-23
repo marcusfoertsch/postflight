@@ -16,7 +16,7 @@
     "test": "mocha --require @babel/register \"test/**/*.test.js\"",
     "test-unit": "mocha --require @babel/register \"test/unit/**/*.test.js\"",
     "test-integration": "mocha --require @babel/register \"test/integration/**/*.test.js\"",
-    "test-e2e": "npm run prepare && mocha \"test/e2e/**/*.test.js\"",
+    "test-e2e": "./test/e2e/prepare-e2e.sh && mocha \"test/e2e/**/*.test.js\" && ./test/e2e/cleanup-e2e.sh",
     "coverage": "nyc --reporter=text --reporter=lcov mocha --require @babel/register \"test/**/*.test.js\"",
     "lint": "./node_modules/.bin/eslint ./",
     "prepare": "mkdir -p dist && babel src -d dist"
