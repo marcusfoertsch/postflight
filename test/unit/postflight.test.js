@@ -36,12 +36,12 @@ describe('Postflight', () => {
         });
 
         specMap = new Map();
-        personPropertyMap = new Map();
-
-        personPropertyMap.set('id', 'id');
-        personPropertyMap.set('firstName', 'first_name');
-        personPropertyMap.set('firstName', 'last_name');
-        personPropertyMap.set('birthday', 'birthday');
+        personPropertyMap = new Map([
+            ['id', 'id'],
+            ['firstName', 'first_name'],
+            ['firstName', 'last_name'],
+            ['birthday', 'birthday']
+        ]);
 
         personSpec = new ModelSpec(personPropertyMap, Person);
 

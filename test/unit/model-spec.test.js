@@ -6,11 +6,12 @@ const expect = chai.expect;
 
 describe('Model Spec tests', () => {
 
-    const personPropertyMap = new Map();
-    personPropertyMap.set('id', 'id');
-    personPropertyMap.set('firstName', 'first_name');
-    personPropertyMap.set('lastName', 'last_name');
-    personPropertyMap.set('birthday', 'birthday');
+    const personPropertyMap = new Map([
+        ['id', 'id'],
+        ['firstName', 'first_name'],
+        ['lastName', 'last_name'],
+        ['birthday', 'birthday']
+    ]);
 
     const Person = class {
         constructor(id, firstName, lastName, birthday) {
@@ -40,7 +41,6 @@ describe('Model Spec tests', () => {
         expect(personSpec.modelClass).to.be.equal(Person);
     });
 
-    // TODO: Spy on modelFactory to test calling arguments?
     it('should return the model', () => {
         const personDb = [{
             id: 0,
@@ -88,6 +88,5 @@ describe('Model Spec tests', () => {
 
         expect(isEmptyObject).to.be.true;
     });
-    // TODO: Test without a class provided
 });
 

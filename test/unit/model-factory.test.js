@@ -14,11 +14,12 @@ describe('Model Factory', function() {
             birthday: 'date'
         };
 
-        const propertyMap = new Map();
-        propertyMap.set('id', 'id');
-        propertyMap.set('firstName', 'first_name');
-        propertyMap.set('lastName', 'last_name');
-        propertyMap.set('birthday', 'birthday');
+        const propertyMap = new Map([
+            ['id', 'id'],
+            ['firstName', 'first_name'],
+            ['lastName', 'last_name'],
+            ['birthday', 'birthday']
+        ]);
 
         const row = {
             id: 1,

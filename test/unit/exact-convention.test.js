@@ -12,6 +12,4 @@ describe('Exact convention', () => {
     it('should return false if the names don\'t match', () => {
         expect(exactConvention('name', 'notName')).to.be.false;
     });
-
-    // TODO: Test differing cases
 });
