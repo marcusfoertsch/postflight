@@ -50,11 +50,20 @@ const models = postflight.getSpec('Widget').getModels(rows);
 
 # Tests
 
-Unit and integration tests use the Mocha framework with Chai assertion library.
+### Unit and integration tests
 
 ```bash
 $ npm install
 $ npm test
+```
+
+### End-to-end tests
+
+These tests depend on bash scripting.
+
+```bash
+$ npm install
+$ npm run test-e2e
 ```
 
 # API
