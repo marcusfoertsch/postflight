@@ -107,3 +107,12 @@ Create a ModelSpec object using a Map object where keys represent model property
 ### getModels(rows {Array\<Object\>}) {Array\<Object\>}
 
 Gets Model objects from an array of database objects. The database objects have property names matching the database column names, where the property's value is equal to the value of the database column.
+
+# Up next
+
+## Automatically generate mappings
+
+* Inspect database to generate model property to database column name mappings
+* Column name prefixes
+* Built-in naming conventions
+* Provide custom naming convention
