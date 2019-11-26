@@ -1,9 +1,10 @@
 const chai = require('chai');
 const Postflight = require('./postflight/');
-const ModelSpec = require('./postflight/dist/model-spec');
+const ModelSpec = require('./postflight/model-spec');
 
 const expect = chai.expect;
 
+// TODO: Use sed to alter package.json main property before copying to dist folder
 describe('End to end tests', () => {
     const Widget = class {
         constructor(id, name, weight, packageSize) {
