@@ -1,5 +1,7 @@
 import chai from 'chai';
 import modelFactory from '../../src/model-factory';
+import { Person } from '../fixtures/classes';
+import { johnWickRow } from '../fixtures/rows';
 
 const expect = chai.expect;
 
@@ -21,21 +23,7 @@ describe('Model Factory', function() {
             ['birthday', 'birthday']
         ]);
 
-        const row = {
-            id: 1,
-            first_name: 'John',
-            last_name: 'Wick',
-            birthday: new Date('1964-09-02')
-        };
-
-        const expectedModel = {
-            id: 1,
-            firstName: 'John',
-            lastName: 'Wick',
-            birthday: new Date('1964-09-02')
-        };
-
-        const actualModel = modelFactory.create(propertyMap, row);
+        const actualModel = modelFactory.create(propertyMap, johnWickRow);
 
         expect(actualModel.id).to.equal(1);
         expect(actualModel.firstName).to.equal('John');
@@ -57,22 +45,6 @@ describe('Model Factory', function() {
         propertyMap.set('lastName', 'last_name');
         propertyMap.set('birthday', 'birthday');
 
-        const Person = class {
-            constructor(id = null, firstName = null, lastName = null, birthday = null) {
-                this.id = id;
-                this.firstName = firstName;
-                this.lastName = lastName;
-                this.birthday = birthday;
-            }
-        };
-
-        const row = {
-            id: 1,
-            first_name: 'John',
-            last_name: 'Wick',
-            birthday: new Date('1964-09-02')
-        };
-
         const expectedModel = new Person(
             1,
             'John',
@@ -80,7 +52,7 @@ describe('Model Factory', function() {
             new Date('1964-09-02')
         );
 
-        const actualModel = modelFactory.create(propertyMap, row, Person);
+        const actualModel = modelFactory.create(propertyMap, johnWickRow, Person);
 
         expect(actualModel).to.deep.equal(expectedModel);
         expect(actualModel instanceof Person).to.equal(true);

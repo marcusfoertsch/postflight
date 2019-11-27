@@ -1,36 +1,15 @@
 import chai from 'chai';
 import proxyquire from 'proxyquire';
+import { ModelSpec, Person } from '../fixtures/classes';
 const expect = chai.expect;
 
 describe('Postflight', () => {
-    const Person = class {
-        constructor(
-            id = null,
-            firstName = null,
-            lastName = null,
-            birthday = null
-        ) {
-            this.id = id;
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.birthday = birthday;
-        }
-    };
-
     let Postflight;
-    let ModelSpec;
     let specMap;
     let personSpec;
     let personPropertyMap;
 
     beforeEach(() => {
-        ModelSpec = class {
-            constructor(propertyMap, modelClass) {
-                this._propertyMap = propertyMap;
-                this._modelClass = modelClass;
-            }
-        };
-
         Postflight = proxyquire('../../src/postflight', {
             './model-spec': ModelSpec
         });

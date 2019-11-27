@@ -1,23 +1,10 @@
 import chai from 'chai';
 import mapper from '../../src/mapper';
+import { Person } from '../fixtures/classes';
 
 const expect = chai.expect;
 
 describe('Mapper', function () {
-    const Person = class {
-        constructor(
-            id = null,
-            firstName = null,
-            lastName = null,
-            birthday = null
-        ) {
-            this.id = id;
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.birthday = birthday;
-        }
-    };
-
     it('should return a Map with property and column names', () =>  {
         const underscoreStub = function (propertyName, columnName) {
             if (propertyName === 'id' && columnName === 'id') {

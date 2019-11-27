@@ -1,5 +1,7 @@
 import proxyquire from 'proxyquire';
 import chai from 'chai';
+import { Person } from '../fixtures/classes';
+import { johnRamboRow } from '../fixtures/rows';
 const expect = chai.expect;
 
 
@@ -12,15 +14,6 @@ describe('Model Spec tests', () => {
         ['lastName', 'last_name'],
         ['birthday', 'birthday']
     ]);
-
-    const Person = class {
-        constructor(id, firstName, lastName, birthday) {
-            this._id = id;
-            this._firstName = firstName;
-            this._lastName = lastName;
-            this._birthday = birthday;
-        }
-    };
 
     it('should create a model spec', () => {
         const modelFactoryStub = {
@@ -42,12 +35,7 @@ describe('Model Spec tests', () => {
     });
 
     it('should return the model', () => {
-        const personDb = [{
-            id: 0,
-            first_name: 'John',
-            last_name: 'Rambo',
-            birthday: new Date('1949-04-15')
-        }];
+        const personDb = [ johnRamboRow ];
         
         const modelFactoryStub = {
             create: (propertyMap, row, modelClass = null) => {

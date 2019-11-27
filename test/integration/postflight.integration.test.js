@@ -1,19 +1,11 @@
 import chai from 'chai';
 import Postflight from '../../src/postflight';
 import ModelSpec from '../../src/model-spec';
+import { Widget } from '../fixtures/classes';
 
 const expect = chai.expect;
 
 describe('Postflight integration', () => {
-
-    const Widget = class {
-        constructor(id, name, weight, packageSize) {
-            this.id = id;
-            this.name = name;
-            this.weight = weight;
-            this.packageSize = packageSize;
-        }
-    };
 
     const specMap = new Map();
 
