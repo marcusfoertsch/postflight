@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git://github.com/marcusfoertsch/postflight.git"
   },
-  "main": "postflight.js",
+  "main": "./dist/postflight.js",
   "files": [
     "**/*.js",
     "LICENSE",
