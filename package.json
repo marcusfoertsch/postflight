@@ -16,10 +16,10 @@
     "test": "npm run test-unit && npm run test-integration",
     "test-unit": "mocha --require @babel/register \"test/unit/**/*.test.js\"",
     "test-integration": "mocha --require @babel/register \"test/integration/**/*.test.js\"",
-    "test-e2e": "npm run pre-package && ./test/e2e/prepare-e2e.sh && mocha \"test/e2e/**/*.test.js\" && ./test/e2e/cleanup-e2e.sh",
+    "test-e2e": "npm run prepublishOnly && ./test/e2e/prepare-e2e.sh && mocha \"test/e2e/**/*.test.js\" && ./test/e2e/cleanup-e2e.sh",
     "coverage": "nyc --reporter=text --reporter=lcov --require @babel/register mocha \"test/unit/*.test.js\" \"test/integration/*.test.js\"",
     "lint": "./node_modules/.bin/eslint ./",
-    "pre-package": "./pre-package.sh"
+    "prepublishOnly": "./pre-package.sh"
   },
   "husky": {
     "hooks": {
