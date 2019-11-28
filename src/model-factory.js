@@ -1,5 +1,5 @@
 const modelFactory = {
-  create: (propertyMap, row, ModelClass = null) => {
+  create: (propertyMap, row, ModelClass) => {
     let model;
 
     if (ModelClass) {

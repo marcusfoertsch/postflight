@@ -17,7 +17,7 @@
     "test-unit": "mocha --require @babel/register \"test/unit/**/*.test.js\"",
     "test-integration": "mocha --require @babel/register \"test/integration/**/*.test.js\"",
     "test-e2e": "npm run pre-package && ./test/e2e/prepare-e2e.sh && mocha \"test/e2e/**/*.test.js\" && ./test/e2e/cleanup-e2e.sh",
-    "coverage": "nyc --reporter=text --reporter=lcov mocha --require @babel/register \"test/unit/*.test.js\" \"test/integration/*.test.js\"",
+    "coverage": "nyc --reporter=text --reporter=lcov --require @babel/register mocha \"test/unit/*.test.js\" \"test/integration/*.test.js\"",
     "lint": "./node_modules/.bin/eslint ./",
     "pre-package": "./pre-package.sh"
   },
@@ -27,7 +27,8 @@
     }
   },
   "nyc": {
-    "include": "src"
+    "all": true,
+    "include": "src/**/*.js"
   },
   "keywords": [
     "node",
