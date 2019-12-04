@@ -73,25 +73,25 @@ describe('End to end tests', () => {
             }
         ];
 
-        const models = postflight.getSpec('widget').getModels(rows);
+        const [factoryWidget, computerWidget, carWidget] = postflight.getSpec('widget').getModels(rows);
 
-        expect(models[0].id).to.equal(1);
-        expect(models[0].name).to.equal('Factory widget');
-        expect(models[0].weight).to.equal(150);
-        expect(models[0].packageSize).to.equal(5);
-        expect(models[0] instanceof Widget).to.be.true;
+        expect(factoryWidget.id).to.equal(1);
+        expect(factoryWidget.name).to.equal('Factory widget');
+        expect(factoryWidget.weight).to.equal(150);
+        expect(factoryWidget.packageSize).to.equal(5);
+        expect(factoryWidget instanceof Widget).to.be.true;
 
-        expect(models[1].id).to.equal(2);
-        expect(models[1].name).to.equal('Computer widget');
-        expect(models[1].weight).to.equal(10);
-        expect(models[1].packageSize).to.equal(20);
-        expect(models[1] instanceof Widget).to.be.true;
+        expect(computerWidget.id).to.equal(2);
+        expect(computerWidget.name).to.equal('Computer widget');
+        expect(computerWidget.weight).to.equal(10);
+        expect(computerWidget.packageSize).to.equal(20);
+        expect(computerWidget instanceof Widget).to.be.true;
 
-        expect(models[2].id).to.equal(3);
-        expect(models[2].name).to.equal('Car widget');
-        expect(models[2].weight).to.equal(4000);
-        expect(models[2].packageSize).to.equal(1);
-        expect(models[2] instanceof Widget).to.be.true;
+        expect(carWidget.id).to.equal(3);
+        expect(carWidget.name).to.equal('Car widget');
+        expect(carWidget.weight).to.equal(4000);
+        expect(carWidget.packageSize).to.equal(1);
+        expect(carWidget instanceof Widget).to.be.true;
     });
 
     it('should create business objects that have constructors with non-default arguments', () => {
@@ -142,25 +142,25 @@ describe('End to end tests', () => {
             }
         ];
 
-        const models = postflight.getSpec('WidgetNoDefaults').getModels(rows);
+        const [factoryWidget, computerWidget, carWidget] = postflight.getSpec('WidgetNoDefaults').getModels(rows);
 
-        expect(models[0].id).to.equal(1);
-        expect(models[0].name).to.equal('Factory widget');
-        expect(models[0].weight).to.equal(150);
-        expect(models[0].packageSize).to.equal(5);
-        expect(models[0] instanceof WidgetNoDefaults).to.be.true;
+        expect(factoryWidget.id).to.equal(1);
+        expect(factoryWidget.name).to.equal('Factory widget');
+        expect(factoryWidget.weight).to.equal(150);
+        expect(factoryWidget.packageSize).to.equal(5);
+        expect(factoryWidget instanceof WidgetNoDefaults).to.be.true;
 
-        expect(models[1].id).to.equal(2);
-        expect(models[1].name).to.equal('Computer widget');
-        expect(models[1].weight).to.equal(10);
-        expect(models[1].packageSize).to.equal(20);
-        expect(models[1] instanceof WidgetNoDefaults).to.be.true;
+        expect(computerWidget.id).to.equal(2);
+        expect(computerWidget.name).to.equal('Computer widget');
+        expect(computerWidget.weight).to.equal(10);
+        expect(computerWidget.packageSize).to.equal(20);
+        expect(computerWidget instanceof WidgetNoDefaults).to.be.true;
 
-        expect(models[2].id).to.equal(3);
-        expect(models[2].name).to.equal('Car widget');
-        expect(models[2].weight).to.equal(4000);
-        expect(models[2].packageSize).to.equal(1);
-        expect(models[2] instanceof WidgetNoDefaults).to.be.true;
+        expect(carWidget.id).to.equal(3);
+        expect(carWidget.name).to.equal('Car widget');
+        expect(carWidget.weight).to.equal(4000);
+        expect(carWidget.packageSize).to.equal(1);
+        expect(carWidget instanceof WidgetNoDefaults).to.be.true;
 
     });
 })

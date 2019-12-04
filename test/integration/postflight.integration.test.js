@@ -66,8 +66,7 @@ describe('Postflight integration', () => {
             }
         ];
 
-        const models = postflight.getSpec('widget').getModels(rows);
-        const [ factoryWidget, computerWidget, carWidget ] = models;
+        const [factoryWidget, computerWidget, carWidget] = postflight.getSpec('widget').getModels(rows);
 
         expect(factoryWidget.id).to.equal(1);
         expect(factoryWidget.name).to.equal('Factory widget');
@@ -136,8 +135,7 @@ describe('Postflight integration', () => {
             }
         ];
 
-        const models = postflight.getSpec('WidgetNoDefaults').getModels(rows);
-        const [ factoryWidget, computerWidget, carWidget ] = models;
+        const [factoryWidget, computerWidget, carWidget] = postflight.getSpec('WidgetNoDefaults').getModels(rows);
 
         expect(factoryWidget.id).to.equal(1);
         expect(factoryWidget.name).to.equal('Factory widget');
