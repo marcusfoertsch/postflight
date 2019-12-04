@@ -15,10 +15,10 @@ $ npm install postflight
 ## Add a model mapping
 ```javascript
 const propertyMap = new Map([
-    ['_id', 'id'],
-    ['_name', 'name'],
-    ['_weight', 'weight'],
-    ['_packageSize', 'package_size']
+    ['id', 'id'],
+    ['name', 'name'],
+    ['weight', 'weight'],
+    ['packageSize', 'package_size']
 ]);
 
 const widgetSpecConfig = {
