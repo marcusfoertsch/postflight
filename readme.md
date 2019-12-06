@@ -4,12 +4,6 @@
 
 Postflight is a node package for mapping database columns to business model properties. It can also instantiate business objects. 
 
-# Install
-
-```bash
-$ npm install postflight
-```
-
 # Usage
 
 ## Add a model mapping
@@ -45,8 +39,18 @@ const rows =  [
 ];
 
 const models = postflight.getSpec('Widget').getModels(rows);
-
 ```
+
+```javascript
+// models[0]
+{
+    id: 1,
+    name: 'Factory widget',
+    weight: 150,
+    packageSize: 5
+}
+```
+    
 
 # Tests
 
@@ -61,6 +65,7 @@ $ npm test
 
 ### End-to-end tests
 
+Test using a local package installation.
 
 ```bash
 $ npm install
@@ -108,6 +113,12 @@ Create a ModelSpec object using a Map object where keys represent model property
 ### getModels(rows {Array\<Object\>}) {Array\<Object\>}
 
 Gets Model objects from an array of database objects. The database objects have property names matching the database column names, where the property's value is equal to the value of the database column.
+
+# Install
+
+```bash
+$ npm install postflight
+```
 
 # Up next
 
