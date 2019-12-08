@@ -32,6 +32,9 @@ jobs:
       - run:
           name: Run end-to-end tests
           command: npm run test-e2e
+      - run:
+          name: Run coverage script
+          command: npm run coverage
       - codecov/upload:
           file: "coverage/lcov.info"
       - save_cache:
@@ -42,11 +45,6 @@ jobs:
       - persist_to_workspace:
           root: ~/repo
           paths: .
-  coverage:
-    <<: *defaults
-    steps:
-      - codecov/upload:
-        file: "coverage/lcov.info"
   deploy:
     <<: *defaults
     steps:
