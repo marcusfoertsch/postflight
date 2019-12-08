@@ -43,8 +43,8 @@ jobs:
   coverage:
     <<: *defaults
     steps:
-      - codecov/upload
-        file: {{ coverage/lcov.info }}
+      - codecov/upload:
+        file: coverage/lcov.info
   deploy:
     <<: *defaults
     steps:
