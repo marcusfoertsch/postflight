@@ -120,6 +120,10 @@ Gets Model objects from an array of database objects. The database objects have 
 $ npm install postflight
 ```
 
+# License
+
+This package uses the MIT license.
+
 # Up next
 
 ## Automatically generate mappings
