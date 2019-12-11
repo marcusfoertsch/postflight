@@ -37,12 +37,7 @@ jobs:
           command: npm run coverage
       - codecov/upload:
           file: "coverage/lcov.info"
-      - run:
-          name: Run build script
-          command: npm run build
-      - run:
-          name: Publish dry run
-          command: cd dist && npm publish --dry-run
+
       - save_cache:
           paths:
             - node_modules
@@ -57,11 +52,14 @@ jobs:
       - attach_workspace:
           at: ~/repo
       - run:
+          name: Run build script
+          command: npm run build
+      - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
       - run:
           name: Publish package
-          command: npm publish
+          command: cd dist && npm publish
             
 workflows:
   version: 2

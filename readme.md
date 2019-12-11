@@ -120,6 +120,16 @@ Gets Model objects from an array of database objects. The database objects have 
 $ npm install postflight
 ```
 
+# Build
+
+The package needs to be packed/published from the dist folder, after running the build script.
+
+```bash
+$ npm run build
+$ cd dist
+$ npm pack
+```
+
 # License
 
 This package uses the MIT license.
