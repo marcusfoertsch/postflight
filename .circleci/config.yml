@@ -37,6 +37,15 @@ jobs:
           command: npm run coverage
       - codecov/upload:
           file: "coverage/lcov.info"
+      - run:
+          name: Run build script
+          command: npm run build
+      - run:
+          name: Change to dist directory
+          command: cd dist
+      - run:
+          name: Publish dry run
+          command: npm publish --dry-run
       - save_cache:
           paths:
             - node_modules
