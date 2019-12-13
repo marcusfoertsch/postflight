@@ -1,26 +1,18 @@
 import ModelSpec from './model-spec';
 
 const Postflight = class {
-  constructor(specMap = new Map()) {
-    if (specMap instanceof Map) {
-      this.specMap = specMap;
-    } else {
-      throw new Error('specMap must be a Map object');
-    }
+  constructor() {
+    this.specMap = new Map();
   }
 
-  addSpec(specConfig) {
-    let specName;
-
-    if (specConfig.name) {
-      specName = specConfig.name;
-    } else {
+  addSpec(name, specConfig) {
+    if (!name) {
       throw new Error('Spec must have a name');
     }
 
     const spec = new ModelSpec(specConfig.propertyMap, specConfig.modelClass);
 
-    this.specMap.set(specName, spec);
+    this.specMap.set(name, spec);
   }
 
   getSpec(modelName) {
@@ -28,4 +20,4 @@ const Postflight = class {
   }
 };
 
-export default Postflight;
+export default new Postflight();

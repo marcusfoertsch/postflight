@@ -1,28 +1,32 @@
+
 import chai from 'chai';
-import Postflight from '../../src/postflight';
-import ModelSpec from '../../src/model-spec';
+
+import postflight from '../../src/postflight';
 import { Widget } from '../fixtures/classes';
 
 const expect = chai.expect;
 
 describe('Postflight integration', () => {
+    
+    beforeEach(() => {
+        postflight.specMap = new Map();
 
-    const specMap = new Map();
+        const widgetPropertyMap = new Map([
+            ['id', 'id'],
+            ['name', 'name'],
+            ['weight', 'weight'],
+            ['packageSize', 'package_size']
+        ]);
 
-    const widgetPropertyMap = new Map([
-        ['id', 'id'],
-        ['name', 'name'],
-        ['weight', 'weight'],
-        ['packageSize', 'package_size']
-    ])
-
-    const widgetSpec = new ModelSpec(widgetPropertyMap, Widget);
-
-    specMap.set('widget', widgetSpec);
+        postflight.addSpec(
+            'widget', 
+            {
+                propertyMap: widgetPropertyMap,
+                modelClass: Widget
+            });
+    });
 
     it('should return a Widget', () => {
-        const postflight = new Postflight(specMap);
-
         const rows =  [
             {
                 id: 1,
@@ -43,7 +47,6 @@ describe('Postflight integration', () => {
     });
 
     it('should return an array of Widgets', () => {
-        const postflight = new Postflight(specMap);
 
         const rows = [
             {
@@ -97,22 +100,19 @@ describe('Postflight integration', () => {
             }
         };
 
-        
-
-        const WidgetNoDefaultsPropertyMap = new Map([
+        const widgetNoDefaultsPropertyMap = new Map([
             ['id', 'id'],
             ['name', 'name'],
             ['weight', 'weight'],
             ['packageSize', 'package_size']
         ])
 
-        const WidgetNoDefaultsSpec = new ModelSpec(WidgetNoDefaultsPropertyMap, WidgetNoDefaults);
-
-        const newSpecMap = new Map([
-            ['WidgetNoDefaults', WidgetNoDefaultsSpec]
-        ]);
-
-        const postflight = new Postflight(newSpecMap);
+        postflight.addSpec(
+            'WidgetNoDefaults', 
+            { 
+                propertyMap: widgetNoDefaultsPropertyMap, 
+                modelClass: WidgetNoDefaults
+            });
 
         const rows = [
             {

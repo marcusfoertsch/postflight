@@ -1,7 +1,7 @@
 export const ModelSpec = class {
   constructor(propertyMap, modelClass) {
-      this._propertyMap = propertyMap;
-      this._modelClass = modelClass;
+      this.propertyMap = propertyMap;
+      this.modelClass = modelClass;
   }
 };
 

@@ -74,13 +74,7 @@ $ npm run test-e2e
 
 # API
 
-## Postflight
-
-The postflight module returns the class Postflight. An instance of Postflight holds a Map object called specMap. Keys are strings, and values are objects of the ModelSpec class.
-
-### constructor(specMap)
-
-Create a Postflight instance using an optional Map object for mapping model properties to database columns. Keys are model property names, and values are database column names.
+## Postflight 
 
 ### addSpec(specConfig)
 
@@ -88,13 +82,11 @@ Add a model mapping to the Postflight object. The argument is a config object:
 
 ```javascript
 {
-    name,
     propertyMap,
     modelClass // optional
 }
 ```
 
-`name` is a string which will be the key the mapping is retrieved by.
 `propertyMap` is a Map object, with keys for model property names and values for database column names.
 `modelClass` is an optional property to instantiate model objects as an instance of a class.
 
