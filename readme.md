@@ -16,14 +16,13 @@ const propertyMap = new Map([
 ]);
 
 const widgetSpecConfig = {
-    name: 'Widget',
     modelClass: Widget, // optional
     propertyMap,
 };
 
 const Postflight = require('postflight');
 const postflight = new Postflight();
-postflight.addSpec(widgetSpecConfig);
+postflight.addSpec('Widget', widgetSpecConfig);
 ```
 
 ## Map database rows to models
@@ -49,6 +48,8 @@ const models = postflight.getSpec('Widget').getModels(rows);
     weight: 150,
     packageSize: 5
 }
+
+console.log(models[0] instanceof Widget) // true
 ```
     
 
