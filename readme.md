@@ -37,19 +37,13 @@ const rows =  [
     }
 ];
 
-const models = postflight.getSpec('Widget').getModels(rows);
-```
+const model = postflight.getSpec('Widget').getModels(rows)[0];
 
-```javascript
-// models[0]
-{
-    id: 1,
-    name: 'Factory widget',
-    weight: 150,
-    packageSize: 5
-}
-
-console.log(models[0] instanceof Widget) // true
+console.log(model.id) // 1
+console.log(model.name) // Factory widget
+console.log(model.weight) // 150
+console.log(model.packageSize) // 5
+console.log(model instanceof Widget) // true
 ```
     
 
