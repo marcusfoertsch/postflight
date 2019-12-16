@@ -1,6 +1,6 @@
 {
   "name": "postflight",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Database to Javascript object mapper",
   "repository": {
     "type": "git",
