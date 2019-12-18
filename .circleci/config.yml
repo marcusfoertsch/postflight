@@ -52,13 +52,13 @@ jobs:
           command: npm run build
       - run:
           name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=$npm_token" > ~/repo/.npmrc
+          command: echo "//registry.npmjs.org/:_authToken=$npm_token" > ~/repo/dist/.npmrc
       - run:
           name: whoami
-          command: cd dist && npm whoami
-      - run:
-          name: Publish package
-          command: cd dist && npm publish
+          command: cd dist && ls -a && npm whoami
+ #     - run:
+ #         name: Publish package
+ #         command: cd dist && npm publish
             
 workflows:
   version: 2.1
