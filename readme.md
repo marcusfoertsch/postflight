@@ -20,8 +20,7 @@ const widgetSpecConfig = {
     propertyMap,
 };
 
-const Postflight = require('postflight');
-const postflight = new Postflight();
+const postflight = require('postflight');
 postflight.addSpec('Widget', widgetSpecConfig);
 ```
 
