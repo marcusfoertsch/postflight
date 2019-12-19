@@ -1,6 +1,6 @@
 # Postflight
 
-[![CircleCI](https://circleci.com/gh/marcusfoertsch/postflight/tree/master.svg?style=shield)](https://circleci.com/gh/marcusfoertsch/postflight/tree/master) [![codecov](https://codecov.io/gh/marcusfoertsch/postflight/branch/master/graph/badge.svg)](https://codecov.io/gh/marcusfoertsch/postflight) [![Generic badge](https://img.shields.io/badge/style-Airbnb-green.svg)](https://shields.io/) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+[![CircleCI](https://circleci.com/gh/marcusfoertsch/postflight/tree/master.svg?style=shield)](https://circleci.com/gh/marcusfoertsch/postflight/tree/master) [![codecov](https://codecov.io/gh/marcusfoertsch/postflight/branch/master/graph/badge.svg)](https://codecov.io/gh/marcusfoertsch/postflight) [![Generic badge](https://img.shields.io/badge/style-Airbnb-green.svg)](https://shields.io/) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/) ![npm](https://img.shields.io/npm/v/postflight)
 
 Postflight is a javascript library for turning an array of database objects into business objects.
 
